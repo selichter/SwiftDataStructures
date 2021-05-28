@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Stack {
+struct Stack {
     var stack: [Int]
     
     var getLength: Int {
@@ -18,11 +18,11 @@ class Stack {
         stack = []
     }
     
-    func push(item: Int) {
+    mutating func push(item: Int) {
         stack.append(item)
     }
     
-    func pop() {
+    mutating func pop() {
         stack.popLast()
     }
     
