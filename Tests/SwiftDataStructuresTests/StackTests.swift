@@ -9,12 +9,6 @@ import XCTest
 @testable import SwiftDataStructures
 
 final class StackTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftDataStructures().text, "Hello, World!")
-    }
     
     func testStackIsInitializedWithEmptyArray() {
         let stack = Stack()
@@ -23,21 +17,21 @@ final class StackTests: XCTestCase {
     }
     
     func testPushAddsElementToStack() {
-        let stack = Stack()
+        var stack = Stack()
         stack.push(item: 43)
         XCTAssertEqual(stack.stack, [43])
         XCTAssertEqual(stack.getLength, 1)
     }
     
     func testPopRemovesItemFromTopOfStack() {
-        let stack = Stack()
+        var stack = Stack()
         stack.stack = [3, 98]
         stack.pop()
         XCTAssertEqual(stack.stack, [3])
     }
     
     func testPeekShowsElementAtTopOfArray() {
-        let stack = Stack()
+        var stack = Stack()
         stack.stack = [7, 89, 32]
         XCTAssertEqual(stack.peek(), 32)
     }
@@ -48,7 +42,7 @@ final class StackTests: XCTestCase {
     }
     
     func testIsEmptyReturnsFalseIfThereAreElementsInStack() {
-        let stack = Stack()
+        var stack = Stack()
         stack.stack = [1, 2, 3]
         XCTAssertFalse(stack.isEmpty())
     }
